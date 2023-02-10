@@ -1,0 +1,102 @@
+div {
+    margin:0;
+    padding:0;
+}
+
+body {
+  position: relative;
+  background-color: #ffe4e6;
+}
+
+.okButtonDiv {
+  position:fixed;
+  top:20%;
+  left:47%;
+  background-color: aliceblue;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap:2rem;
+  border-radius: 1rem;
+}
+
+.book-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem;
+  background-color: #e11d48;
+  padding: 1rem;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f9ff;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.book > div {
+  margin-left: 1rem;
+}
+
+.title {
+  font-weight: bold;
+}
+
+/*Design css*/
+
+.add-book{
+    display: flex;
+    flex-direction: column;
+    background-color: #38bdf8;
+    border-radius: 1rem;
+    width: 50vw;
+    margin-left:25vw;
+}
+
+.caption{
+    font-weight: bold; 
+    font-size:1.2rem; 
+    text-align: center;
+    margin:1rem 0;
+}
+
+form > div{
+    margin: 1rem;
+}
+
+form > div > button, #okButton , #removeBook, #changeReadStatus{
+  appearance: none;
+  background: #4338ca;
+  border: 0;
+  border-radius: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 500;
+  line-height: 1;
+  padding: 1em 1.5em;
+}
+
+#okButton , #removeBook, #changeReadStatus{
+  padding: 0.5em 1em;
+}
+
+.book-display .caption{
+    grid-column: 1/4;
+}
+
+input[type="text"], input[type="number"] {
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 4px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}

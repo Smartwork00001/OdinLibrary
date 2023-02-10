@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Odin Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="okButtonDiv">
+        <div id="okButtonText"></div>
+        <button id="okButton">OK</button>
+    </div>
+    <div class="add-book">
+        <div class="caption">Add a book to the library</div>
+        <form id="form" action="" method="post">
+            <div>
+                <span>Title: </span>
+                <input type="text" name="title" pattern="^[A-za-z]+$"required>
+            </div>
+            <div>
+                <span>Author: </span>
+                <input type="text" name="author" pattern="^[A-za-z]+$" required>
+            </div>
+            <div>
+                <span>No of Pages: </span>
+                <input type="number" name="noPages" min='1' max="'10000" required>
+            </div>
+            <div>
+                <span>Read the book yet? :</span><br>
+                <input type="radio" id="read-true" name="read" value="Has been read" checked="checked" required>
+                <label for="read-true">Yes</label>
+                <input type="radio" id="read-false" name="read" value="Not read yet" required>
+                <label for="read=false">No</label>
+            </div>
+            <div>
+                <button id="add-book" type="submit">Add a book</button>
+            </div>
+        </form>
+    </div>
+    <div class="book-display">
+        <div class="caption">Books Display</div>
+    </div>
+</body>
+</html>

@@ -104,11 +104,12 @@ function bookDisplayEvent(event) {
   const child = event.target.closest(".book");
   if (child) {
     const id = event.target.getAttribute("id");
-    const index = child.getAttribute('id')*1;
+    const index = child.getAttribute("id") * 1;
     if (id === "changeReadStatus") {
       myLibrary[index].changeRead();
       displayBooks();
     } else if (id === "removeBook") {
+      displayMessage(`Book ${myLibrary[index].title} has been deleted`);
       removeBook(index);
     }
   }

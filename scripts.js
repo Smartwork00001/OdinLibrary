@@ -1,11 +1,15 @@
 const myLibrary = [];
-const body = document.querySelector("body");
 const bookDisplay = document.querySelector(".book-display");
 const addBook = document.querySelector("#add-book");
 const form = document.querySelector("#form");
-const okButton = document.querySelector("#okButton");
 const okButtonText = document.querySelector("#okButtonText");
 const okButtonDiv = document.querySelector(".okButtonDiv");
+const titleInput = document.querySelector("#title");
+const authorInput = document.querySelector("#author");
+const noPagesInput = document.querySelector("#noPages");
+const titleValidationMessage = document.querySelector(".title-validation-message");
+const authorValidationMessage = document.querySelector(".author-validation-message");
+const noPagesValidationMessage = document.querySelector(".noPages-validation-message");
 
 function Book(title, author, noPages, read) {
   this.title = title;
@@ -93,6 +97,7 @@ function addBookToLibrary(event) {
   } else {
     displayMessage("Author name can only consist of alphabets!");
   }
+  form.reset();
 }
 
 function removeBook(index) {
@@ -115,6 +120,30 @@ function bookDisplayEvent(event) {
   }
 }
 
+const validateTitle = function(){
+  if(titleInput.checkValidity()){
+    titleValidationMessage.textContent = '';
+  }else{
+    titleValidationMessage.textContent = titleInput.validationMessage;
+  }
+}
+
+const validateAuthor = function(){
+  if(authorInput.checkValidity()){
+    authorValidationMessage.textContent = '';
+  }else{
+    authorValidationMessage.textContent = authorInput.validationMessage;
+  }
+}
+
+const validateNoPages = function(){
+  if(noPagesInput.checkValidity()){
+    noPagesValidationMessage.textContent = '';
+  }else{
+    noPagesValidationMessage.textContent = noPagesInput.validationMessage;
+  }
+}
+
 addBooksToLibrary("teibok", "teibok", 234, "Has been read");
 addBooksToLibrary("teibok1", "teibok", 234, "Has been read");
 addBooksToLibrary("teibok2", "teibok", 234, "Has been read");
@@ -124,3 +153,6 @@ displayBooks();
 addBook.addEventListener("click", addBookToLibrary);
 okButtonDiv.addEventListener("click", removeMessage);
 bookDisplay.addEventListener("click", bookDisplayEvent);
+titleInput.addEventListener("input",validateTitle);
+authorInput.addEventListener("input",validateAuthor);
+noPagesInput.addEventListener("input",validateNoPages);

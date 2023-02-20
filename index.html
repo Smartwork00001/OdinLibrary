@@ -9,7 +9,6 @@
     <script src="scripts.js" defer></script>
 </head>
 <body>
-    <div class="test-branch">TEST BRANCH</div>
     <div class="okButtonDiv">
         <div id="okButtonText"></div>
         <button id="okButton">OK</button>
@@ -19,15 +18,18 @@
         <form id="form" action="" method="post">
             <div>
                 <span>Title: </span>
-                <input type="text" name="title" pattern="^[A-za-z]+$"required>
+                <input id="title" type="text" name="title" pattern="^[A-za-z0-9]+$" minlength="1" maxlength="30" required>
+                <div class="title-validation-message"></div>
             </div>
             <div>
                 <span>Author: </span>
-                <input type="text" name="author" pattern="^[A-za-z]+$" required>
+                <input id="author" type="text" name="author" pattern="^[A-za-z]+$" minlength="1" maxlength="50" required>
+                <div class="author-validation-message"></div>
             </div>
             <div>
                 <span>No of Pages: </span>
-                <input type="number" name="noPages" min='1' max="'10000" required>
+                <input id="noPages" type="number" name="noPages" min='1' max="10000" required>
+                <div class="noPages-validation-message"></div>
             </div>
             <div>
                 <span>Read the book yet? :</span><br>
